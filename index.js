@@ -17,7 +17,7 @@ app.listen(port,function(){
 })
 
 try{
-    mongoose.connect("mongodb://admin:admin@123@ds123012.mlab.com:23012/studentsdb",{ useNewUrlParser: true }, function(){
+    mongoose.connect("mongodb://admin:admin123@ds123012.mlab.com:23012/studentsdb",{ useNewUrlParser: true }, function(){
         console.log("I am running the Db on 27017");
     })
 }
