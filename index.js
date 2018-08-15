@@ -16,9 +16,15 @@ app.listen(port,function(){
     console.log("I am running the server on ", port);
 })
 
-mongoose.connect("mongodb://localhost:27017/studentDb",{ useNewUrlParser: true }, function(){
-    console.log("I am running the Db on 27017");
-})
+try{
+    mongoose.connect("mongodb://localhost:27017/studentDb",{ useNewUrlParser: true }, function(){
+        console.log("I am running the Db on 27017");
+    })
+}
+catch(err){
+    console.log("Unable to connect to MongoDb");
+}
+
 
 
 var ws = fs.createWriteStream("logs/request.log", {flags: 'a'});
