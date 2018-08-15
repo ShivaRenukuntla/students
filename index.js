@@ -5,6 +5,10 @@ var mongoose = require('mongoose');
 var middlewares = require('./middlewares');
 var trueLog  = require('true-log');
 var fs = require('fs');
+var defaultRouter = require('./Routers/default.router');
+var studentsRouter = require('./Routers/students.router');
+var userRouter = require('./Routers/user.router');
+var reviewRouter = require('./Routers/review.router');
 
 var port = process.env.PORT || 80;
 
@@ -20,14 +24,9 @@ mongoose.connect("mongodb://localhost:27017/studentDb",{ useNewUrlParser: true }
 var ws = fs.createWriteStream("logs/request.log", {flags: 'a'});
 app.use(trueLog({level: 'full', stream : ws}));
 
-var defaultRouter = require('./Routers/default.router');
-var studentsRouter = require('./Routers/students.router');
-var userRouter = require('./Routers/user.router');
-var reviewRouter = require('./Routers/review.router');
+
 app.use(bodyParser.json());
 app.use(express.static("uploads"));
-
-
 app.use('/', defaultRouter);
 app.use('/api/users',userRouter);
 // // app.use(middlewares.authenticate);  
