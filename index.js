@@ -6,10 +6,10 @@ var middlewares = require('./middlewares');
 var trueLog  = require('true-log');
 var fs = require('fs');
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
 
 app.listen(port,function(){
-    console.log("I am running the server on 3000");
+    console.log("I am running the server on ", port);
 })
 
 mongoose.connect("mongodb://localhost:27017/studentDb",{ useNewUrlParser: true }, function(){
