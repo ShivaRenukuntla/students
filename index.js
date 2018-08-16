@@ -34,7 +34,7 @@ catch (err) {
 }
 
 
-
+// used to collect the logs by using the true log package
 var ws = fs.createWriteStream("logs/request.log", { flags: 'a' });
 app.use(trueLog({ level: 'full', stream: ws }));
 
