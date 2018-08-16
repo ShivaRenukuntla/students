@@ -17,7 +17,7 @@ app.listen(port, function () {
 })
 
 try {
-    mongoose.connect("mongodb://admin:admin123@ds123012.mlab.com:23012/studentsdb", { useNewUrlParser: true, 
+    mongoose.connect("mongodb://admin:admin123@ds123562.mlab.com:23562/studdb", { useNewUrlParser: true, 
     socketTimeoutMS: 0,
     connectTimeoutMS: 0,        
     }
